@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Forecast-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainWeatherViewController" customModule="weatherDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmQ-EQ-Oev">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63M-Sb-HZt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLe-a5-8e1" customClass="CurrentWeatherView" customModule="weatherDemo" customModuleProvider="target">
+                                                <rect key="frame" x="10.5" y="0.0" width="393" height="400"/>
+                                                <viewLayoutGuide key="safeArea" id="iJz-um-N2g"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="C10-ga-3Bn"/>
+                                                </constraints>
+                                            </view>
+                                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KgJ-Lz-rSm">
+                                                <rect key="frame" x="10.5" y="410" width="393" height="300"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="sHc-2q-Rap"/>
+                                                </constraints>
+                                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Zur-kL-vgp" customClass="WeatherForecastTableViewCell" customModule="weatherDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="393" height="43.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zur-kL-vgp" id="Sry-St-1bj">
+                                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <sections/>
+                                            </tableView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="KgJ-Lz-rSm" firstAttribute="centerX" secondItem="YLe-a5-8e1" secondAttribute="centerX" id="1zB-OG-cyz"/>
+                                            <constraint firstItem="YLe-a5-8e1" firstAttribute="centerX" secondItem="63M-Sb-HZt" secondAttribute="centerX" id="GT5-t8-M7O"/>
+                                            <constraint firstItem="YLe-a5-8e1" firstAttribute="top" secondItem="63M-Sb-HZt" secondAttribute="top" id="Pa0-kx-8tG"/>
+                                            <constraint firstItem="YLe-a5-8e1" firstAttribute="width" secondItem="63M-Sb-HZt" secondAttribute="width" multiplier="0.95" id="SDv-TT-II4"/>
+                                            <constraint firstItem="KgJ-Lz-rSm" firstAttribute="top" secondItem="YLe-a5-8e1" secondAttribute="bottom" constant="10" id="uMt-Vt-jeW"/>
+                                            <constraint firstItem="KgJ-Lz-rSm" firstAttribute="width" secondItem="63M-Sb-HZt" secondAttribute="width" multiplier="0.95" id="yXW-zB-3LT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="63M-Sb-HZt" secondAttribute="trailing" id="6Ha-5r-egI"/>
+                                    <constraint firstItem="63M-Sb-HZt" firstAttribute="leading" secondItem="HmQ-EQ-Oev" secondAttribute="leading" id="HAO-g2-mU9"/>
+                                    <constraint firstItem="63M-Sb-HZt" firstAttribute="height" secondItem="HmQ-EQ-Oev" secondAttribute="height" priority="250" id="S8P-Sb-hoj"/>
+                                    <constraint firstItem="63M-Sb-HZt" firstAttribute="width" secondItem="HmQ-EQ-Oev" secondAttribute="width" id="UzU-4E-yYZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="63M-Sb-HZt" secondAttribute="bottom" id="ZBj-eb-9XH"/>
+                                    <constraint firstItem="63M-Sb-HZt" firstAttribute="top" secondItem="HmQ-EQ-Oev" secondAttribute="top" id="b76-j6-drw"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HmQ-EQ-Oev" secondAttribute="bottom" id="4Cj-TW-HAc"/>
+                            <constraint firstItem="HmQ-EQ-Oev" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9P0-kP-pYz"/>
+                            <constraint firstItem="HmQ-EQ-Oev" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="a5A-az-J7k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HmQ-EQ-Oev" secondAttribute="trailing" id="nBg-hh-qt6"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Forecast" selectedImage="chart.bar.fill" catalog="system" id="b5b-Cg-dVE"/>
+                    <navigationItem key="navigationItem" id="om3-D1-dxM"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="contentView" destination="63M-Sb-HZt" id="rTo-P3-3V9"/>
+                        <outlet property="contentViewHeightConstraint" destination="S8P-Sb-hoj" id="emf-7g-7m1"/>
+                        <outlet property="cwView" destination="YLe-a5-8e1" id="O29-XJ-LF0"/>
+                        <outlet property="forecastTableView" destination="KgJ-Lz-rSm" id="76l-9D-U8m"/>
+                        <outlet property="forecastTableViewHeightConstraint" destination="sHc-2q-Rap" id="GOC-Lj-mfl"/>
+                        <outlet property="scrollView" destination="HmQ-EQ-Oev" id="XWM-Jp-fi8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2920" y="19"/>
+        </scene>
+        <!--Location Search View Controller-->
+        <scene sceneID="Jh5-MQ-OFP">
+            <objects>
+                <viewController storyboardIdentifier="location" id="JYW-Cm-Y6l" customClass="LocationSearchViewController" customModule="weatherDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AgW-Ny-vDe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" text="" placeholder="Search for a city " showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aUg-ir-N5D">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ewk-YQ-CV7">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="pwP-RA-8IC" style="IBUITableViewCellStyleDefault" id="8Vu-LY-Lvz">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Vu-LY-Lvz" id="h7K-wp-dDm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pwP-RA-8IC">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="43w-b4-ipM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="43w-b4-ipM" firstAttribute="trailing" secondItem="aUg-ir-N5D" secondAttribute="trailing" id="2z1-7M-Tfp"/>
+                            <constraint firstItem="43w-b4-ipM" firstAttribute="trailing" secondItem="Ewk-YQ-CV7" secondAttribute="trailing" id="ALu-lG-qT8"/>
+                            <constraint firstItem="Ewk-YQ-CV7" firstAttribute="leading" secondItem="43w-b4-ipM" secondAttribute="leading" id="FXd-M7-aQN"/>
+                            <constraint firstItem="Ewk-YQ-CV7" firstAttribute="top" secondItem="aUg-ir-N5D" secondAttribute="bottom" id="S64-Yo-WGt"/>
+                            <constraint firstItem="43w-b4-ipM" firstAttribute="bottom" secondItem="Ewk-YQ-CV7" secondAttribute="bottom" id="SxI-H8-0Rc"/>
+                            <constraint firstItem="aUg-ir-N5D" firstAttribute="top" secondItem="43w-b4-ipM" secondAttribute="top" id="dR8-ZQ-g82"/>
+                            <constraint firstItem="aUg-ir-N5D" firstAttribute="leading" secondItem="43w-b4-ipM" secondAttribute="leading" id="pZG-JH-fQz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wYC-0J-iG1"/>
+                    <connections>
+                        <outlet property="locationSearchBar" destination="aUg-ir-N5D" id="jjM-bf-8m4"/>
+                        <outlet property="locationTableView" destination="Ewk-YQ-CV7" id="tZg-0R-Ipa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7KQ-Ia-FyD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3859" y="13"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
